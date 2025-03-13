@@ -5,7 +5,11 @@
       "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {},
+      extend: {
+        backgroundImage: {
+          'custom-gradient': 'linear-gradient(to top, #281B43 , #312252, #7F56D9 )',
+        }
+      },
     },
     plugins: [],
   }
