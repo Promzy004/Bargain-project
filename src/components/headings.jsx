@@ -8,3 +8,14 @@ const Headings = ({title1, title2, text}) => {
 }
  
 export default Headings;
+
+
+export function Heading2({color = 'text-white', style, desc, title}) {
+
+    return(
+        <div className={`flex flex-col gap-4 ${color}`}>
+            <h3 className="text-3xl">{title}</h3>
+            <p className={`font-[350] ${style}`}>{desc}</p>
+        </div>
+    )
+}

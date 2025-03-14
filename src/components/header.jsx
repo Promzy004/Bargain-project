@@ -23,7 +23,7 @@ const Header = () => {
     return (
         <header className={border ? 'header shadow-md z-50': 'header'}>
             <Link to=''>Stream Bargain</Link>
-            <nav className="flex gap-5 items-center text-sm">
+            <nav className="md:flex lg:gap-5 gap-2 items-center text-sm hidden">
                 <Link to='#scroll' className="link">How to get started</Link>
                 <Link to='' className="link">FAQs</Link>
                 <Link to='' className="link">Contact Us</Link>
