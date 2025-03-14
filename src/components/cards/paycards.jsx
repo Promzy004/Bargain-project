@@ -72,12 +72,10 @@ export function SecondCard() {
             </div>
             <hr className="" />
 
-            <div className="flex bg-red-500 w-full flex-col gap-7 pt-5">
-                <div>
-                    <img src={social_icons} alt="" className="w-4/5" />
-                </div>
+            <div className="flex w-full flex-col items-center gap-10 pt-8">
+                <img src={social_icons} alt="" className="w-4/5" />
                 <Link to=''>
-                    <button className="rounded-md bg-white px-16 py-2 text-sm text-purple-600">Get Now</button>
+                    <button className="rounded-md bg-white px-20 py-2 text-sm text-purple-600">Get Now</button>
                 </Link>
             </div>
         </div>

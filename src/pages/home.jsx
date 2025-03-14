@@ -4,8 +4,25 @@ import social from "../assets/images/social-medias.png"
 import { FirstCard, SecondCard } from "../components/cards/paycards";
 import { motion } from "framer-motion";
 import Headings from "../components/headings";
+import StarterCard from "../components/cards/startercard";
 
 const Home = () => {
+
+    const headings = [
+        {
+            title1: 'Is this even',
+            title2: 'possible?',
+            text: 'Yes it is! How we make this work is we link five people to one Premium/Family account, giving everyone their own profile and unlimited access to all the content. No setup from you required - we take care of all the details. Simply login and enjoy.'
+        },
+        {
+            title1: 'How to',
+            title2: 'Get Started',
+            text: 'Within moments, receive your login details, and you\'re all set to dive into a world of unlimited entertainment hassle-free.'
+        }
+    ]
+
+    console.log(headings[0]['title'])
+
     return (
         <div>
             <Header />
@@ -33,10 +50,16 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="scroll" className="w-full flex flex-col gap-20 items-center justify-center px-40 py-20 text-center">
-                <Headings />
-                <div>
-                    <Headings />
+            <section id="scroll" className="w-full flex flex-col gap-20 items-center justify-center px-56 py-20 text-center">
+                <Headings title1={headings[0]['title1']} title2={headings[0]['title2']} text={headings[0]['text']} />
+                <div className="flex flex-col gap-11">
+                    <Headings title1={headings[1]['title1']} title2={headings[1]['title2']} text={headings[1]['text']} />
+                    <div className="w-full justify-center flex gap-12 mb-6">
+                        <StarterCard />
+                        <StarterCard />
+                        <StarterCard />
+                    </div>
+                    <Button href='' text='Get Started Now'/>
                 </div>
                 
             </section>
