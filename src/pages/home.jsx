@@ -100,7 +100,7 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center px-20 py-20 text-center">
+            <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center px-20 py-20 text-center">
                 <div className="lg:w-2/4 sm:w-3/4 w-5/6 text-white flex flex-col gap-7">
                     <h3 className="text-4xl">Give up paying for each streaming app separately</h3>
                     <p className="text-sm">Use Stream Bargain to save over {"\u20A6"}4400 on monthly entertainment subscriptions</p>
@@ -155,7 +155,7 @@ const Home = () => {
 
             <section id="scroll" className="w-full px-56 flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-purple-200 text-bold' />
-            </section> */}
+            </section>
 
         </div>
     );
