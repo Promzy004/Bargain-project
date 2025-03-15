@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ham_menu from '../assets/images/ham-menu.png'
+import ham_cacel from "../assets/images/close-ham-menu.png"
+import { motion } from "framer-motion";
 
 const Header = () => {
 
     const [border, setborder] = useState(false);
+    const [nav, setNav] = useState(false)
+    console.log(nav)
 
     useEffect(() => {
 
@@ -23,15 +28,21 @@ const Header = () => {
     return (
         <header className={border ? 'header shadow-md z-50': 'header'}>
             <Link to=''>Stream Bargain</Link>
-            <nav className="md:flex lg:gap-5 gap-2 items-center text-sm hidden">
+            <nav className={`nav-style ${nav ? 'hidden' : 'flex'}`}>
+                <button className="md:hidden w-full py-5 border-b-[1px] border-neutral-300/50">
+                    <img src={ham_cacel} alt="" className="active:bg-purple-300" onClick={() => setNav(!nav)} />
+                </button>
                 <Link to='#scroll' className="link">How to get started</Link>
                 <Link to='' className="link">FAQs</Link>
                 <Link to='' className="link">Contact Us</Link>
                 <Link to='' className="link">Referrals</Link>
-                <Link to='' className="link">
-                    <button className="px-4 py-2 rounded-lg bg-purple-900 hover:bg-purple-600 text-white duration-500">Get Started</button>
+                <Link to='' className="link md:w-auto w-full">
+                    <button className="px-4 py-2 rounded-lg bg-purple-700 hover:bg-purple-500 text-white duration-500 w-full">Get Started</button>
                 </Link>
             </nav>
+            <button className="md:hidden active:bg-neutral-200" onClick={() => setNav(!nav)}>
+                <img src={ham_menu} alt=""/>
+            </button>
         </header>
     );
 }

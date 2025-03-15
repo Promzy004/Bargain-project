@@ -9,6 +9,11 @@
         backgroundImage: {
           'custom-gradient': 'linear-gradient(to top, #281B43 , #312252, #7F56D9 )',
         },
+        colors: {
+          custompurple1: '#281B43',
+          custompurple2: '#312252',
+          custompurple3: '#7F56D9',
+        },
         keyframes: {
           pulse: {
             '0%' : {color: 'purple'},
