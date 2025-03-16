@@ -37,7 +37,7 @@ export function FirstCard() {
     ]
 
     return(
-        <div className="bg-white h-[417px] shadow-md rounded-2xl p-7 w-80 flex flex-col gap-4">
+        <div className="bg-white h-[417px] shadow-md rounded-2xl p-7 md:w-80 w-72 flex flex-col gap-4">
             <div className="w-full flex flex-col justify-center text-center gap-3 px-6">
                 <div>
                     <p className="font-medium">without Stream Bargain</p>
@@ -62,7 +62,7 @@ export function FirstCard() {
 export function SecondCard() {
 
     return(
-        <div className="bg-purple-600 h-[417px] shadow-md rounded-2xl p-7 w-80 flex flex-col gap-4">
+        <div className="bg-purple-600 h-[417px] shadow-md rounded-2xl p-7 md:w-80 w-72 flex flex-col gap-4">
             <div className="w-full flex flex-col justify-center text-center gap-3 px-6 text-white">
                 <div className="flex flex-col gap-3 items-center justify-center">
                     <p className="font-medium bg-white text-purple-600 rounded-md px-3">with Stream Bargain</p>
