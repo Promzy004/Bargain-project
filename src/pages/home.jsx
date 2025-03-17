@@ -1,13 +1,17 @@
 import Button from "../components/button";
 import Header from "../components/header";
-import social from "../assets/images/social-medias.png"
 import { FirstCard, SecondCard } from "../components/cards/paycards";
 import { AnimatePresence, motion } from "framer-motion";
 import Headings, { Heading2 } from "../components/headings";
 import StarterCard from "../components/cards/startercard";
 import TestimonialCard from "../components/cards/testimonial";
 import { useEffect, useState } from "react";
-import { title } from "framer-motion/client";
+import apple_icon from '../assets/images/social-icons/apple-logo.png'
+import spotify_icon from '../assets/images/social-icons/spotify-logo.png'
+import prime_icon from '../assets/images/social-icons/prime-logo.png'
+import youtube_icon from '../assets/images/social-icons/youtube-logo.png'
+import cruchyroll_icon from '../assets/images/social-icons/cruchyroll-logo.png'
+import netflix_icon from '../assets/images/social-icons/netflix-logo.png'
 
 const Home = () => {
 
@@ -87,17 +91,29 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <section className="w-full flex flex-col justify-center md:pt-16 sm:pt-8 mt-10  md:gap-14 gap-8 h-screen">
+            <section className="w-full flex flex-col justify-center md:py-16 sm:py-8 mt-10  md:gap-14 gap-8 h-screen">
                 <div className="flex flex-col gap-11 lg:w-2/4 md:w-3/5 sm:w-[75%] w-[85%] md:mb-0 mb-6 items-center mx-auto text-center">
                     <p className="md:mb-4 mb-1 sm:text-lg text-sm">Give up having multiple subscriptions.</p>
                     <h3 className="sm:text-4xl text-3xl font-[450]">All streaming services are available for <span className="text-purple-500">Single price!</span></h3>
                     <p className="md:mb-4 mb-1 sm:text-xl text-lg">As little as <span className="font-semibold">{"\u20A6"}3,500 per month</span>, receive an All-Access Pass to all your favorite streaming apllications.</p>
                     <Button text='Gain Access Now' href='facebook.com'/>
                 </div>
-                <motion.div 
-                    className="lg:w-4/5 md:w-5/6 w-[90%] lg:px-20 md:px-10 mx-auto relative flex gap-5">
-                    <img src={social} alt="streaming platform icons" className="w-full " />
-                </motion.div>
+                <div className="container">
+                    <img src={apple_icon} alt="streaming platform icons" className="w-full imgs img1" />
+                    <img src={spotify_icon} alt="streaming platform icons" className="w-full imgs img2" />
+                    <img src={prime_icon} alt="streaming platform icons" className="w-full imgs img3" />
+                    <img src={youtube_icon} alt="streaming platform icons" className="w-full imgs img4" />
+                    <img src={cruchyroll_icon} alt="streaming platform icons" className="w-full imgs img5" />
+                    <img src={netflix_icon} alt="streaming platform icons" className="w-full imgs img6" />
+
+                    {/* duplicate for a loop */}
+                    {/* <img src={apple_icon} alt="streaming platform icons" className="w-full img1" />
+                    <img src={spotify_icon} alt="streaming platform icons" className="w-full img2" />
+                    <img src={prime_icon} alt="streaming platform icons" className="w-full img3" />
+                    <img src={youtube_icon} alt="streaming platform icons" className="w-full img4" />
+                    <img src={cruchyroll_icon} alt="streaming platform icons" className="w-full img5" />
+                    <img src={netflix_icon} alt="streaming platform icons" className="w-full img6" /> */}
+                </div>
             </section>
 
             <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center px-20 py-20 text-center">

@@ -32,12 +32,107 @@
     px-14
     bg-white/30 
     backdrop-blur-md
-    fixed top-0
+    fixed 
+    top-0
 }
+
+.nav-style{
+    @apply 
+    md:flex 
+    md:flex-row 
+    md:text-black 
+    md:relative 
+    md:bg-gradient-to-t 
+    md:from-transparent 
+    md:to-transparent 
+    lg:gap-5 
+    md:w-auto 
+    md:h-auto 
+    md:px-0 
+    md:top-0 
+    gap-2 
+    md:items-center 
+    bg-gradient-to-t 
+    from-custompurple1 
+    via-custompurple2 
+    to-custompurple3 
+    text-sm 
+    absolute 
+    flex-col 
+    right-0 
+    w-2/5 
+    top-[0px] 
+    items-start 
+    h-screen 
+    px-5 
+    z-50 
+    text-white
+}
+
 
 .link{
     @apply 
     p-2 
-    hover:text-purple-600 
+    md:hover:text-purple-600 
+    hover:text-neutral-400
     duration-300
 }
+
+.container{
+    margin-inline: auto;
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+    width: 70%;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    z-index: -1;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 30px;
+    background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+    animation-name: scroll-left;
+}
+
+.container > img {
+    width: 150px;
+    border-radius: 6px;
+    position: absolute;
+    left: calc(150px * 6);
+    animation-name: scroll-left;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+
+@keyframes scroll-left{
+    to{
+        left: -200px;
+    }
+}
+
+
+/* Evenly space out the items */
+.container > .img1 { animation-delay: calc(10s / 6 * (6 - 1) * -1)}
+.container > .img2 { animation-delay: calc(10s / 6 * (6 - 2) * -1)}
+.container > .img3 { animation-delay: calc(10s / 6 * (6 - 3) * -1)}
+.container > .img4 { animation-delay: calc(10s / 6 * (6 - 4) * -1)}
+.container > .img5 { animation-delay: calc(10s / 6 * (6 - 5) * -1)}
+.container > .img6 { animation-delay: calc(10s / 6 * (6 - 6) * -1)}
