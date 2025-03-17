@@ -80,7 +80,8 @@ const Home = () => {
 
     useEffect(() => {
         const interval = setTimeout(() => {
-            setIndex(prev => (prev < testimonial_data.length -2 ? prev + 2 : 0))
+            setIndex(prev => (prev < testimonial_data.length - 2 ? prev + 2 : 0))
+            console.log(index)
         }, 6000)
 
         return () => clearTimeout(interval);
@@ -116,22 +117,26 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center px-20 py-20 text-center">
-                <div className="lg:w-2/4 sm:w-3/4 w-5/6 text-white flex flex-col gap-7">
-                    <h3 className="text-4xl">Give up paying for each streaming app separately</h3>
+            <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center md:px-20 md:py-20 py-14 text-center">
+                <div className="lg:w-2/4 sm:w-3/4 px-5 text-white flex flex-col gap-7">
+                    <h3 className="md:text-4xl text-3xl">Give up paying for each streaming app separately</h3>
                     <p className="text-sm">Use Stream Bargain to save over {"\u20A6"}4400 on monthly entertainment subscriptions</p>
                 </div>
-                <div className="flex md:flex-row flex-col gap-12">
+                <div className="md:pl-0 px-14 grid grid-cols-[1fr_1fr] overflow-auto md:w-auto w-full gap-6">
                     <FirstCard />
                     <SecondCard />
                 </div>
             </section>
 
-            <section id="scroll" className="w-full flex flex-col gap-20 items-center justify-center px-56 py-20 text-center">
-                <Headings title1={headings[0]['title1']} title2={headings[0]['title2']} text={headings[0]['text']} />
-                <div className="flex flex-col gap-11">
-                    <Headings title1={headings[1]['title1']} title2={headings[1]['title2']} text={headings[1]['text']} />
-                    <div className="w-full justify-center flex gap-12 mb-6">
+            <section id="scroll" className="w-full flex flex-col gap-20 items-center justify-center md:px-20 md:py-20 py-14 text-center">
+                <div className="px-5">
+                    <Headings title1={headings[0]['title1']} title2={headings[0]['title2']} text={headings[0]['text']} />
+                </div>
+                <div className="flex w-full flex-col gap-11">
+                    <div className="px-5">
+                        <Headings title1={headings[1]['title1']} title2={headings[1]['title2']} text={headings[1]['text']} />
+                    </div>
+                    <div className="md:w-auto px-14 w-full overflow-x-auto grid grid-cols-[1fr_1fr_1fr] gap-6">
                         <StarterCard />
                         <StarterCard />
                         <StarterCard />
@@ -140,7 +145,7 @@ const Home = () => {
                 </div>  
             </section>
 
-            <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center py-20 text-center">
+            {/* <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <div className="w-full px-56">
                     <Heading2 title={heading2[0]['title']} desc={heading2[0]['desc']} />
                 </div>
@@ -171,7 +176,7 @@ const Home = () => {
 
             <section id="scroll" className="w-full px-56 flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-purple-200 text-bold' />
-            </section>
+            </section> */}
 
         </div>
     );
