@@ -122,9 +122,11 @@ const Home = () => {
                     <h3 className="md:text-4xl text-3xl">Give up paying for each streaming app separately</h3>
                     <p className="text-sm">Use Stream Bargain to save over {"\u20A6"}4400 on monthly entertainment subscriptions</p>
                 </div>
-                <div className="md:pl-0 px-14 grid grid-cols-[1fr_1fr] overflow-auto md:w-auto w-full gap-6">
-                    <FirstCard />
-                    <SecondCard />
+                <div className="overflow-auto sm:overflow-hidden w-full ">
+                        <div className="sm:px-0 gap-6 lg:gap-10 sm:w-full w-64 mx-auto flex sm:flex-wrap sm:justify-center">
+                        <FirstCard />
+                        <SecondCard />
+                        </div>
                 </div>
             </section>
 
@@ -136,20 +138,39 @@ const Home = () => {
                     <div className="px-5">
                         <Headings title1={headings[1]['title1']} title2={headings[1]['title2']} text={headings[1]['text']} />
                     </div>
-                    <div className="md:w-auto px-14 w-full overflow-x-auto grid grid-cols-[1fr_1fr_1fr] gap-6">
+                    {/* <div className="md:w-auto bg-red-300 lg:w-5/6 w-[70%] mx-auto px-14 grid md:grid-cols-[1fr_1fr] md:grid-rows-2 grid-cols-[1fr_1fr_1fr] gap-6">
                         <StarterCard />
                         <StarterCard />
                         <StarterCard />
+                    </div> */}
+                    {/* <div className="md:w-auto bg-red-300 overflow-auto w-full lg:w-5/6 mx-auto md:px-12 px-[25vw] grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-[1fr_1fr] md:grid-rows-2 grid-cols-[1fr_1fr_1fr] gap-6">
+                        <StarterCard />
+                        <StarterCard />
+                        <StarterCard />
+                    </div> */}
+
+                    <div className="overflow-auto w-full">
+                        <div className="sm:px-0 gap-6 sm:w-full w-64 mx-auto flex sm:flex-wrap sm:justify-center">
+                            <StarterCard />
+                            <StarterCard />
+                            <StarterCard />
+                        </div>
                     </div>
+
+                    {/* <div className="flex bg-red-400 sm:flex-wrap sm:justify-center overflow-hidden gap-6 w- mx-auto px-[25vw]">
+                        <StarterCard />
+                        <StarterCard />
+                        <StarterCard />
+                    </div> */}
                     <Button href='' text='Get Started Now'/>
                 </div>  
             </section>
 
-            {/* <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center py-20 text-center">
-                <div className="w-full px-56">
+            <section id="scroll" className="w-full bg-custom-gradient flex flex-col gap-20 items-center justify-center py-20 text-center">
+                <div className="w-full lg:px-56 px-5">
                     <Heading2 title={heading2[0]['title']} desc={heading2[0]['desc']} />
                 </div>
-                <div className="w-4/5 flex gap-5 overflow-hidden">
+                <div className="md:w-4/5 w-[90%] flex lg:flex-row flex-col gap-5 overflow-hidden">
                     {testimonial_data.slice(index, index + 2).map((card) => (
                         <AnimatePresence key={card.id}  mode="wait">
                             <motion.div
@@ -176,7 +197,7 @@ const Home = () => {
 
             <section id="scroll" className="w-full px-56 flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-purple-200 text-bold' />
-            </section> */}
+            </section>
 
         </div>
     );
