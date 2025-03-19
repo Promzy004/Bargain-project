@@ -12,6 +12,8 @@ import prime_icon from '../assets/images/social-icons/prime-logo.png'
 import youtube_icon from '../assets/images/social-icons/youtube-logo.png'
 import cruchyroll_icon from '../assets/images/social-icons/cruchyroll-logo.png'
 import netflix_icon from '../assets/images/social-icons/netflix-logo.png'
+import client1 from "../assets/images/client1.png"
+import client2 from "../assets/images/client2.png"
 
 const Home = () => {
 
@@ -53,13 +55,15 @@ const Home = () => {
             id: 1,
             name: 'John carter',
             region: 'South Africa',
-            comment: '"The taste is unbelievable! I thought farm-fresh meant good, but this is on another level. The tomatoes are he sweetest i\'ve ever had"'
+            comment: '"The taste is unbelievable! I thought farm-fresh meant good, but this is on another level. The tomatoes are he sweetest i\'ve ever had"',
+            image: client1,
         },
         {
             id: 2,
             name: 'Edwin Promise',
             region: 'Nigeria',
-            comment: '"The taste is unbelievable! I thought farm-fresh meant good, but this is on another level. The tomatoes are he sweetest i\'ve ever had"'
+            comment: '"The taste is unbelievable! I thought farm-fresh meant good, but this is on another level. The tomatoes are he sweetest i\'ve ever had"',
+            image: client2
         },
         {
             id: 3,
@@ -180,7 +184,7 @@ const Home = () => {
                                 transition={{ type: 'tween', ease: 'easeInOut'}}
                                 exit={{x: '-100vw', opacity: 0}}
                             >
-                                <TestimonialCard name={card.name} region={card.region} comment={card.comment} />
+                                <TestimonialCard name={card.name} backgroundImage={card.image} region={card.region} comment={card.comment} />
                             </motion.div>
                         </AnimatePresence>
                     ))}
