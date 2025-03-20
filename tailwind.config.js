@@ -1,3 +1,5 @@
+import { transform } from 'framer-motion'
+
   /** @type {import('tailwindcss').Config} */
   export default {
     content: [
@@ -21,10 +23,17 @@
             '100%' : {color: 'purple'},
           }
         },
-        animation: {
-          'pulse': 'pulse 1s linear infinite',
+
+        rotate: {
+          'x-180': '180deg',
         }
       },
     },
-    plugins: [],
+    plugins: [
+      function ({ addUtilities }) {
+        addUtilities ({
+          '.rotate-y-180': {transform: 'rotateX(180deg)'},
+        })
+      }
+    ],
   }

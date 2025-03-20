@@ -14,6 +14,7 @@ import cruchyroll_icon from '../assets/images/social-icons/cruchyroll-logo.png'
 import netflix_icon from '../assets/images/social-icons/netflix-logo.png'
 import client1 from "../assets/images/client1.png"
 import client2 from "../assets/images/client2.png"
+import FAQs from "../components/cards/faq";
 
 const Home = () => {
 
@@ -79,17 +80,48 @@ const Home = () => {
         },
     ]
 
+    const faqs_data = [
+        {
+            question: 'How is this service possible?',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            id: 1
+        },
+        {
+            question: 'Is the payment option safe?',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            id: 2
+        },
+        {
+            question: 'Can i cancel my subscription?',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            id: 3
+        },
+    ]
+
+
+    //state for managing the tesimonial slider
     const [index, setIndex] = useState(0);
     
-
+    //useEffect that triggers when a change of state occur
     useEffect(() => {
+
+        //setTimeout used to set a timer when the next slider should display
         const interval = setTimeout(() => {
             setIndex(prev => (prev < testimonial_data.length - 2 ? prev + 2 : 0))
-            console.log(index)
         }, 6000)
 
+        //setTimeout cleanup, this cleans up the timeout when it is unmount
         return () => clearTimeout(interval);
     })
+
+    const [faqIndex, setFaqIndex] = useState(0)
+
+    const handleFaqClick = (index) => {
+        setFaqIndex(index)
+    }
+
+    console.log(faqIndex)
+
 
 
 
@@ -110,14 +142,6 @@ const Home = () => {
                     <img src={youtube_icon} alt="streaming platform icons" className="w-full imgs img4" />
                     <img src={cruchyroll_icon} alt="streaming platform icons" className="w-full imgs img5" />
                     <img src={netflix_icon} alt="streaming platform icons" className="w-full imgs img6" />
-
-                    {/* duplicate for a loop */}
-                    {/* <img src={apple_icon} alt="streaming platform icons" className="w-full img1" />
-                    <img src={spotify_icon} alt="streaming platform icons" className="w-full img2" />
-                    <img src={prime_icon} alt="streaming platform icons" className="w-full img3" />
-                    <img src={youtube_icon} alt="streaming platform icons" className="w-full img4" />
-                    <img src={cruchyroll_icon} alt="streaming platform icons" className="w-full img5" />
-                    <img src={netflix_icon} alt="streaming platform icons" className="w-full img6" /> */}
                 </div>
             </section>
 
@@ -142,17 +166,6 @@ const Home = () => {
                     <div className="px-5">
                         <Headings title1={headings[1]['title1']} title2={headings[1]['title2']} text={headings[1]['text']} />
                     </div>
-                    {/* <div className="md:w-auto bg-red-300 lg:w-5/6 w-[70%] mx-auto px-14 grid md:grid-cols-[1fr_1fr] md:grid-rows-2 grid-cols-[1fr_1fr_1fr] gap-6">
-                        <StarterCard />
-                        <StarterCard />
-                        <StarterCard />
-                    </div> */}
-                    {/* <div className="md:w-auto bg-red-300 overflow-auto w-full lg:w-5/6 mx-auto md:px-12 px-[25vw] grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-[1fr_1fr] md:grid-rows-2 grid-cols-[1fr_1fr_1fr] gap-6">
-                        <StarterCard />
-                        <StarterCard />
-                        <StarterCard />
-                    </div> */}
-
                     <div className="overflow-auto w-full">
                         <div className="sm:px-0 gap-6 sm:w-full w-64 mx-auto flex sm:flex-wrap sm:justify-center">
                             <StarterCard />
@@ -160,12 +173,6 @@ const Home = () => {
                             <StarterCard />
                         </div>
                     </div>
-
-                    {/* <div className="flex bg-red-400 sm:flex-wrap sm:justify-center overflow-hidden gap-6 w- mx-auto px-[25vw]">
-                        <StarterCard />
-                        <StarterCard />
-                        <StarterCard />
-                    </div> */}
                     <Button href='' text='Get Started Now'/>
                 </div>  
             </section>
@@ -191,15 +198,20 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="scroll" className="w-full px-56 flex flex-col gap-20 items-center justify-center py-20 text-center">
+            <section id="scroll" className="w-full flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[1]['title']} desc={heading2[1]['desc']} style='text-2xl font-light'/>
+                <div className="w-full flex flex-col items-center gap-3">
+                    {faqs_data.map((faq, index) => (
+                        <FAQs key={index} question={faq.question} answer={faq.answer} index={index} handClick={handleFaqClick} answer_style={faqIndex == index ? 'flex' : 'hidden'} arrow_style={faqIndex == index ? 'transform rotate-y-180 duration-500' : ''} />
+                    ))}
+                </div>
             </section>
 
-            <section id="scroll" className="w-full bg-custom-gradient px-56 flex flex-col gap-20 items-center justify-center py-20 text-center">
+            <section id="scroll" className="w-full bg-custom-gradient lg:px-56 px-5 flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-white" title={heading2[2]['title']} desc={heading2[2]['desc']} />
             </section>
 
-            <section id="scroll" className="w-full px-56 flex flex-col gap-20 items-center justify-center py-20 text-center">
+            <section id="scroll" className="w-full flex flex-col lg:px-56 px-5 gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-purple-200 text-bold' />
             </section>
 
