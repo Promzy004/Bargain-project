@@ -15,6 +15,8 @@ import netflix_icon from '../assets/images/social-icons/netflix-logo.png'
 import client1 from "../assets/images/client1.png"
 import client2 from "../assets/images/client2.png"
 import FAQs from "../components/cards/faq";
+import refer_img from "../assets/images/refer_img.png"
+import ReferAlert from "../components/refer";
 
 const Home = () => {
 
@@ -114,10 +116,10 @@ const Home = () => {
         return () => clearTimeout(interval);
     })
 
-    const [faqIndex, setFaqIndex] = useState(0)
+    const [faqIndex, setFaqIndex] = useState(null)
 
     const handleFaqClick = (index) => {
-        setFaqIndex(index)
+        setFaqIndex(prev => prev == index ? null : index)
     }
 
     console.log(faqIndex)
@@ -209,6 +211,11 @@ const Home = () => {
 
             <section id="scroll" className="w-full bg-custom-gradient lg:px-56 px-5 flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-white" title={heading2[2]['title']} desc={heading2[2]['desc']} />
+                <div className="w-full flex flex-col items-center gap-10">
+                    <ReferAlert />
+                    <Button href='' text='Get Started' />
+                    <img src={refer_img} alt="" />
+                </div>
             </section>
 
             <section id="scroll" className="w-full flex flex-col lg:px-56 px-5 gap-20 items-center justify-center py-20 text-center">

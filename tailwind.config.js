@@ -15,6 +15,9 @@ import { transform } from 'framer-motion'
           custompurple1: '#281B43',
           custompurple2: '#312252',
           custompurple3: '#7F56D9',
+          customgray1: '#807499',
+          customgray2: '#604E89',
+          customwhite: '#FAF8FF',
         },
         keyframes: {
           pulse: {
