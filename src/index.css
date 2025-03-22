@@ -161,3 +161,16 @@
 .container > .img4 { animation-delay: calc(10s / 6 * (6 - 4) * -1)}
 .container > .img5 { animation-delay: calc(10s / 6 * (6 - 5) * -1)}
 .container > .img6 { animation-delay: calc(10s / 6 * (6 - 6) * -1)}
+
+
+.contact-input{
+    @apply 
+    focus:outline-none 
+    border-b-[1px] 
+    border-custompurple3
+    relative
+    placeholder:absolute
+    placeholder:bottom-2
+    p-2
+    w-full
+}

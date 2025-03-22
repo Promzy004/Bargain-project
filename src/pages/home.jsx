@@ -17,6 +17,7 @@ import client2 from "../assets/images/client2.png"
 import FAQs from "../components/cards/faq";
 import refer_img from "../assets/images/refer_img.png"
 import ReferAlert from "../components/refer";
+import Form from "../components/form";
 
 const Home = () => {
 
@@ -85,7 +86,7 @@ const Home = () => {
     const faqs_data = [
         {
             question: 'How is this service possible?',
-            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            answer: 'How we make his work is we link five people to one Premium/Family account, giving everyone their own profile and unlimited access to all the content. No setup from you required - we take care of all the details. Simply login and enjoy!',
             id: 1
         },
         {
@@ -97,6 +98,21 @@ const Home = () => {
             question: 'Can i cancel my subscription?',
             answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
             id: 3
+        },
+        {
+            question: 'Do i have privacy on the content i consume?',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            id: 4
+        },
+        {
+            question: 'Can i have multiple subscription on the sae service?',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            id: 5
+        },
+        {
+            question: 'Is this service legal?',
+            answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quisquam consequuntur vitae earum et expedita tempore! Tenetur iste porro quisquam',
+            id: 6
         },
     ]
 
@@ -218,8 +234,9 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="scroll" className="w-full flex flex-col lg:px-56 px-5 gap-20 items-center justify-center py-20 text-center">
-                <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-purple-200 text-bold' />
+            <section id="scroll" className="w-full flex flex-col lg:px-56 px-5 gap-14 items-center justify-center py-20 text-center">
+                <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-customgray3 text-bold' />
+                <Form />
             </section>
 
         </div>
