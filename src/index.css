@@ -69,7 +69,8 @@
     flex 
     flex-col 
     right-0 
-    w-2/5 
+    sm:w-2/5 
+    w-3/4
     top-[0px] 
     items-start 
     h-screen 

@@ -18,6 +18,8 @@ import FAQs from "../components/cards/faq";
 import refer_img from "../assets/images/refer_img.png"
 import ReferAlert from "../components/refer";
 import Form from "../components/form";
+import Newsletter from "../components/newsletter";
+import Footer from "../components/footer";
 
 const Home = () => {
 
@@ -146,11 +148,11 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <section className="w-full flex flex-col justify-center md:py-16 sm:py-8 mt-10  md:gap-14 gap-8 h-screen">
+            <section className="w-full flex flex-col justify-center lg:py-7 md:py-36 sm:py-8 mt-10 md:gap-14 gap-8 lg:h-screen py-20 box-content">
                 <div className="flex flex-col gap-11 lg:w-2/4 md:w-3/5 sm:w-[75%] w-[85%] md:mb-0 mb-6 items-center mx-auto text-center">
                     <p className="md:mb-4 mb-1 sm:text-lg text-sm">Give up having multiple subscriptions.</p>
-                    <h3 className="sm:text-4xl text-3xl font-[450]">All streaming services are available for <span className="text-purple-500">Single price!</span></h3>
-                    <p className="md:mb-4 mb-1 sm:text-xl text-lg">As little as <span className="font-semibold">{"\u20A6"}3,500 per month</span>, receive an All-Access Pass to all your favorite streaming apllications.</p>
+                    <h3 className="sm:text-4xl text-[7vw] font-[450]">All streaming services are available for <span className="text-purple-500">Single price!</span></h3>
+                    <p className="md:mb-4 mb-1 sm:text-xl text-[4.5vw]">As little as <span className="font-semibold">{"\u20A6"}3,500 per month</span>, receive an All-Access Pass to all your favorite streaming apllications.</p>
                     <Button text='Gain Access Now' href='facebook.com'/>
                 </div>
                 <div className="container">
@@ -237,6 +239,23 @@ const Home = () => {
             <section id="scroll" className="w-full flex flex-col lg:px-56 px-5 gap-14 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[3]['title']} desc={heading2[3]['desc']} style='text-customgray3 text-bold' />
                 <Form />
+            </section>
+
+            <section className="w-[80%] md:mt-32 md:mb-6 my-6 mx-auto flex flex-col gap-8">
+                <Newsletter />
+                <div className="w-full h-[1px] bg-neutral-400"></div>
+                <div className="flex md:flex-row flex-col justify-between gap-5 md:items-center md:my-10 sm:my-5 my-2">
+                    <div className="w-full flex flex-col gap-2">
+                        <h3 className="md:text-2xl text-xl">Start your incredible experience with Stream Bargain</h3>
+                        <p className="text-sm text-custompurple1/50">Join over 4,000+ people to enjoy streaming payment made easy.</p>
+                    </div>
+                    <div action="" method="post" className="md:w-[50%] w-full flex gap-2">
+                        <button className="w-[50%] border border-neutral-400 shadow-sm rounded-lg text-base px-3 py-2 bg-custompurple3/5 hover:bg-customPrimary hover:text-white duration-500 cursor-pointer">Login</button>
+                        <button className="w-[50%] py-1 bg-customPrimary hover:bg-customPrimary/80 duration-500 text-base text-white rounded-lg">Sign Up</button>
+                    </div>
+                </div>
+                <div className="w-full h-[1px] bg-neutral-400"></div>
+                <Footer />
             </section>
 
         </div>
