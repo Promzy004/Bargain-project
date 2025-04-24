@@ -22,7 +22,7 @@
     flex 
     justify-between 
     items-center 
-    py-5 
+    py-5
     xl:px-28 
     lg:px-20
     md:px-12
@@ -174,4 +174,34 @@
     placeholder:bottom-2
     p-2
     w-full
+}
+
+
+/*  =====================================================================================Sign up form section */
+
+.fieldset{
+    @apply 
+    border-2 
+    border-custompurple3 
+    rounded-tl-lg 
+    rounded-br-lg
+    flex
+}
+
+.legend{
+    @apply 
+    mx-5 
+    px-1
+    text-sm
+}
+
+.input{
+    @apply 
+    mx-3 
+    mb-2
+    py-1
+    w-full
+    focus:outline-none
+    placeholder:text-xs
+    placeholder:sm:text-sm
 }

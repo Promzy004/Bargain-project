@@ -20,6 +20,7 @@ import ReferAlert from "../components/refer";
 import Form from "../components/form";
 import Newsletter from "../components/newsletter";
 import Footer from "../components/footer";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
@@ -140,7 +141,7 @@ const Home = () => {
         setFaqIndex(prev => prev == index ? null : index)
     }
 
-    console.log(faqIndex)
+    const navigate = useNavigate();
 
 
 
@@ -250,8 +251,8 @@ const Home = () => {
                         <p className="text-sm text-custompurple1/50">Join over 4,000+ people to enjoy streaming payment made easy.</p>
                     </div>
                     <div action="" method="post" className="md:w-[50%] w-full flex gap-2">
-                        <button className="w-[50%] border border-neutral-400 shadow-sm rounded-lg text-base px-3 py-2 bg-custompurple3/5 hover:bg-customPrimary hover:text-white duration-500 cursor-pointer">Login</button>
-                        <button className="w-[50%] py-1 bg-customPrimary hover:bg-customPrimary/80 duration-500 text-base text-white rounded-lg">Sign Up</button>
+                        <button onClick={() => navigate('/login')} className="w-[50%] border border-neutral-400 shadow-sm rounded-lg text-base px-3 py-2 bg-custompurple3/5 hover:bg-customPrimary hover:text-white duration-500 cursor-pointer">Login</button>
+                        <button onClick={() => navigate('/register')} className="w-[50%] py-1 bg-customPrimary hover:bg-customPrimary/80 duration-500 text-base text-white rounded-lg">Sign Up</button>
                     </div>
                 </div>
                 <div className="w-full h-[1px] bg-neutral-400"></div>
