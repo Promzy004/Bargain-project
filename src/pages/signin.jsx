@@ -1,6 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LogIn = () => {
+
+    const navigate = useNavigate()
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/dashboard');
+    }
+
     return (
         <div className="flex bg-custom-gradient min-h-screen">
             <div className="lg:w-2/4 w-full bg-white flex flex-col items-center py-10 justify-center gap-12">
@@ -10,7 +18,7 @@ const LogIn = () => {
                         <h2 className="text-3xl font-bold">Welcome Back!</h2>
                         <p>Sign In to continue enjoying your streaming services</p>
                     </div>
-                    <form action="" method="post" className="flex flex-col gap-3 w-full">
+                    <form action="" method="post" onSubmit={e => handleSubmit(e)} className="flex flex-col gap-3 w-full">
                         <fieldset className="fieldset">
                             <legend className="legend">Email</legend>
                             <input type="enail" placeholder="Enter Email" className="input"/>

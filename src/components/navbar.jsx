@@ -1,7 +1,7 @@
-const Navbar = () => {
+const Navbar = ({detail}) => {
     return (
-        <div className="bg-blue-400 px-5 py-3 rounded-md">
-            Dashboard
+        <div className="bg-custompurple3 px-5 py-3 rounded-md text-white">
+            {detail}
         </div>
     );
 }

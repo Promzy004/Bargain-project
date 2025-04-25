@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+
+    const navigate = useNavigate()
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/login');
+    }
+
     return (
         <div className="flex bg-custom-gradient min-h-screen">
             <div className="lg:w-2/4 w-full bg-white flex flex-col items-center py-10 justify-center gap-12">
@@ -10,7 +17,7 @@ const SignUp = () => {
                         <h2 className="text-3xl font-bold">Create An Account</h2>
                         <p>Sign Up to enjoy your streaming services</p>
                     </div>
-                    <form action="" method="post" className="flex flex-col gap-3 w-full">
+                    <form action="" method="post" onSubmit={e => handleSubmit(e)} className="flex flex-col gap-3 w-full">
                         <div className="flex gap-4 w-full">
                             <fieldset className="fieldset w-full">
                                 <legend className="legend">First Name</legend>

@@ -221,7 +221,7 @@ const Home = () => {
 
             <section id="scroll" className="w-full flex flex-col gap-20 items-center justify-center py-20 text-center">
                 <Heading2 color="text-black" title={heading2[1]['title']} desc={heading2[1]['desc']} style='text-2xl font-light'/>
-                <div className="w-full flex flex-col items-center gap-3">
+                <div className="w-full flex flex-col items-center gap-5">
                     {faqs_data.map((faq, index) => (
                         <FAQs key={index} question={faq.question} answer={faq.answer} index={index} handClick={handleFaqClick} answer_style={faqIndex == index ? 'flex' : 'hidden'} arrow_style={faqIndex == index ? 'transform rotate-y-180 duration-500' : ''} />
                     ))}
