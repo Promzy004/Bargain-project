@@ -9,16 +9,15 @@ const DashbordLayout = () => {
     //it is passed as props in the sidebar component to manage the state according to the action
     const [activePage, setActivePage] = useState('Dashboard')
 
+    let hello = sessionStorage.setItem('state', activePage);
+    console.log(hello)
+
     return (
-        <div className="flex min-h-screen box-border">
-            <div className="w-[20%] bg-purple-400 h-screen sticky top-0">
-                <SideBar activePage={activePage} setActivePage={setActivePage} />
-            </div>
-            <div className="w-[80%] relative flex justify-center box-border">
-                <div className="absolute w-[90%] z-10 top-8">
-                    <Navbar detail = {activePage}/>
-                </div>
-                <div className="absolute top-32 w-[90%]">
+        <div className="flex w-full box-border relative">
+            <SideBar activePage={activePage} setActivePage={setActivePage} />
+            <div className="w-[80%] min-h-screen flex-1 ml-[20%]">
+                <Navbar detail = {activePage}/>
+                <div className="relative mx-auto left-0 top-32 w-[90%] box-border">
                     <Outlet/>
                 </div>
             </div>
